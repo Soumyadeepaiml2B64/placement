@@ -54,5 +54,26 @@ ll.display()
 
 
     
+#insertioninmiddle
+def insert_in_middle(self, data):
+    new_node = Node(data)
+    if not self.head:
+        self.head = new_node
+        return
+    old = self.head
+    new = self.head
+    prev = None
+    while new and new.next:
+        prev = old
+        old = old.next
+        new = new.next.next
+    new_node.next = old
+    if prev:
+        prev.next = new_node
+    else:
+        self.head = new_node
 
+LinkedList.insert_in_middle = insert_in_middle
+ll.insert_in_middle(15)
+ll.display()
     

@@ -25,11 +25,14 @@ class LinkedList:
             current = current.next
         print(elements)
 
-
 ll = LinkedList()
 ll.append(10)
 ll.append(20)
 ll.append(30)
+ll.append(40)
+ll.append(50)
+ll.append(60)
+ll.append(70)
 ll.display() 
 
 
@@ -73,7 +76,34 @@ def insert_in_middle(self, data):
     else:
         self.head = new_node
 
-LinkedList.insert_in_middle = insert_in_middle
-ll.insert_in_middle(15)
+#LinkedList.insert_in_middle = insert_in_middle
+#ll.insert_in_middle(15)
+#ll.display()
+def print_middle(self):
+    slow = self.head
+    fast = self.head
+    while fast and fast.next:
+        slow = slow.next
+        fast = fast.next.next
+    if slow:
+        print("Middle element:", slow.data)
+
+#LinkedList.print_middle = print_middle
+#ll.print_middle()
+
+def reverse(self):
+    prev = None
+    current = self.head
+    while current:
+        next_node = current.next
+        current.next = prev
+        prev = current
+        current = next_node
+    self.head = prev
+
+LinkedList.reverse = reverse
+ll.reverse()
 ll.display()
+
+
     

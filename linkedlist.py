@@ -105,5 +105,26 @@ LinkedList.reverse = reverse
 ll.reverse()
 ll.display()
 
+def from_last(self):
+    n = int(input("Enter n: "))
+    main_ptr = self.head
+    ref_ptr = self.head
+    count = 0
+    while count < n:
+        if not ref_ptr:
+            print(f"List has fewer than {n} elements.")
+            return
+        ref_ptr = ref_ptr.next
+        count += 1
+    while ref_ptr:
+        main_ptr = main_ptr.next
+        ref_ptr = ref_ptr.next
+    if main_ptr:
+        print(f"{n}th element from the last is: {main_ptr.data}")
+    else:
+        print("Element not found.")
 
+
+LinkedList.from_last = from_last
+ll.from_last()
     

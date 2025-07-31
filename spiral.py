@@ -27,7 +27,4 @@ while (top <= bottom and left <= right):
     if left <= right:
         for i in range(bottom, top - 1, -1):
             print(matrix[i][left], end=' ')
-        left += 1ght:
-        for i in range(bottom, top - 1, -1):
-            print(matrix[i][left], end=' ')
         left += 1
